@@ -1,0 +1,157 @@
+<script type="text/javascript">
+	function update() {
+		document.getElementById('text').value = cookiecount;
+		document.title = cookiecount + " Cookies";
+		document.getElementById('ammountAutoClick').innerHTML = "You Own " + autoClick + " Auto Clickers";
+		document.getElementById('costAutoClick').innerHTML = ((autoClick+1) * 12) + " Cookies";
+		document.getElementById('ammountFarms').innerHTML = "You Own " + farms + " Farms";
+		document.getElementById('costFarms').innerHTML = ((farms+1) * 15) + " Cookies";
+		document.getElementById('costGrandma').innerHTML = ((grandmas+1) * 30) + " Cookies"
+		document.getElementById('ammountGrandma').innerHTML = "You Own " + grandmas + " Grandmas";
+		document.getElementById('cookiespersecond').innerHTML = "You are gaining " + (((autoClick)+(farms*2))+grandmas*8) + " Cookies per/s";
+	}
+	
+	var cookiecount = 0;
+	var autoClick = 0;
+	var farms = 0;
+	var grandmas = 0;
+	
+	function timer() {
+		cookiecount = cookiecount + autoClick;
+		cookiecount = cookiecount + grandmas*8;
+		cookiecount = cookiecount + farms*2;
+		update()
+		
+	}
+	setInterval(timer, 1000)
+</script>
+<html>
+	
+	<link rel="stylesheet" href="style.css">
+<head><title>0 Cookies</title></head>
+	<script type="text/javascript">
+		
+		cookiecount = localStorage.getItem("cookiecount");
+		cookiecount = parseInt(cookiecount);
+		autoClick = localStorage.getItem("autoClick");
+		autoClick = parseInt(autoClick);
+		farms = localStorage.getItem("farms");
+		farms = parseInt(farms);
+		grandmas = localStorage.getItem("grandmas")
+		grandmas = parseInt(grandmas);
+		update()
+	
+	</script>
+	
+	<button><a href="#" onClick="save()">Save</a></button><button><a href="#" onClick="load()">Load</a></button><br><br><button><a href="#" onClick="del()">Delete Progress</a></button>
+	<br><br>
+	<button><a href="unav1.html" >Download CSS</a></button><button><a href="unav2.html" >Download HTML</a></button><h9>You can download the code and send it to 25shewmwalj@washk12.org to have it in the next update!</h9>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<center>
+		
+<body>
+	
+	<p id="cookiespersecond">You are gaining 0 Cookies per/s</p>
+	
+	<a href=# onclick="add()"><img src="cookie.jpg"></a>
+	<br><br>
+	You got:
+	<input type="text" id="text" disabled style= text-align:center value=0 width="300" height="200">
+	<script type="text/javascript">
+	
+		function add() {
+			
+			cookiecount = cookiecount + 1
+			update()
+		}
+	
+	</script>
+	Cookies
+	<br><br>
+	<p>Buy 1 Auto Clicker</p>
+	<button><a href="#" onClick="buyAutoClick()"><img src=auto-clicker.png width="50px" height="50px"></a></button>
+	<p id="costAutoClick">12 Cookies</p>
+	<p id="ammountAutoClick">You Own 0 Auto Clickers</p>
+	<br><br>
+	<p>Buy 1 Farm</p>
+	<button><a href="#" onClick="buyFarm()"><img src="farm.png" width="50px" height="50px"></a></button>
+	<p id="costFarms">15 Cookies</p>
+	<p id="ammountFarms">You Own 0 Farms</p>
+	<br><br>
+	<p>Buy 1 Grandma</p>
+	<button><a href="#" onClick="buyGrandma()"><img src="grandma.png" width="50px" height="50px"></a></button>
+	<p id="costGrandma">30 cookies</p>
+	<p id="ammountGrandma">You Own 0 Grandmas</p>
+	
+	<script type="text/javascript">
+	function save() {
+		localStorage.setItem("cookiecount", cookiecount);
+		localStorage.setItem("autoClick", autoClick);
+		localStorage.setItem("farms", farms);
+		localStorage.setItem("grandmas", grandmas);
+	}
+	
+	function load() {
+		cookiecount = localStorage.getItem("cookiecount");
+		cookiecount = parseInt(cookiecount);
+		autoClick = localStorage.getItem("autoClick");
+		autoClick = parseInt(autoClick);
+		farms = localStorage.getItem("farms");
+		farms = parseInt(farms);
+		grandmas = localStorage.getItem("grandmas");
+		grandmas = parseInt(grandmas);
+		update()
+	}
+		
+		function buyAutoClick() {
+			if (cookiecount >= ((autoClick+1) * 12)) {
+				cookiecount = cookiecount - ((autoClick+1) * 12);
+				autoClick = autoClick + 1;
+				update()
+			}
+		}
+	function buyFarm() {
+		if (cookiecount >= ((farms+1) * 15)) {
+			cookiecount = cookiecount - ((farms+1) * 15);
+		    farms = farms + 1;
+			update()
+	}
+	
+	}
+	function del() {
+		cookiecount = 0
+		farms = 0
+		autoClick = 0
+		grandmas = 0
+		save()
+	}
+		function buyGrandma() {
+			if (cookiecount >= ((grandmas+1) * 30)) {
+				cookiecount = cookiecount - ((grandmas+1) * 30);
+				grandmas = grandmas + 1;
+				update()
+			}
+		}
+		function getdad() {
+			grandmas = 3000
+			autoClick = 1000
+			save()
+			update()
+		}
+	</script>
+</body>
+		
+		<a href="#" onClick="getdad();">.</a>
+		</center>
+	
+<button><a href="index.html" onClick="save();">Quit</a></button><br><p>saves your game!!</p>
+	
+</html>
