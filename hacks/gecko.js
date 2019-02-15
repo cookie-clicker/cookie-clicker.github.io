@@ -4,14 +4,15 @@ var teach;
 
 var userpass = '356483';
 
-var teacher = ['placeholder', 'GIFFORD', 'MORSE', 'FRY'];
-var teachid = ['placeholder', 'P0002035', 'P0002038', 'P0002004'];
+var teacher = ['placeholder', 'GIFFORD', 'MORSE', 'FRY', 'NYBERG'];
+var teachid = ['placeholder', 'P0002035', 'P0002038', 'P0002004', 'P0002059'];
 
 var teachers = {
   
   GIFFORD : 1,
   MORSE : 2,
-  FRY : 3
+  FRY : 3,
+  NYBERG : 4
   
 }
 
