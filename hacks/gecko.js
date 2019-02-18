@@ -90,5 +90,4 @@ function help() {
 
 console.log(getid());
 
-help();
 
