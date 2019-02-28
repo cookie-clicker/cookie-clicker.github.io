@@ -2,7 +2,7 @@ var i = 0;
 var id;
 var teach;
 
-var userpass = '356483';
+var userpass = '';
 
 var teacher = ['placeholder', 'GIFFORD', 'MORSE', 'FRY', 'NYBERG', 'YOUNG'];
 var teachid = ['placeholder', 'P0002035', 'P0002038', 'P0002004', 'P0002059', 'P0002041'];
